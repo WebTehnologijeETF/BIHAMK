@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="stil.css">
+	<link rel="shortcut icon" type="image/x-icon" href="bihamk_icon.png">
+    <title>BIHAMK</title>	
+</head>
+
+<body>
+  
+  <div id="header">
+		<div id="naslov">Bosanskohercegovacki auto-moto klub</div>
+	</div>
+  
+	<div class="sadrzaj">
+	
+		<div class="navigacija">
+			<ul id="meni">
+				<li><a href="naslovnica.html">NASLOVNICA</a></li>
+				<li><a href="oNama.html">O NAMA</a></li>
+				<li><a href="clanstvo.html">MEDUNARODNO CLANSTVO</a></li>
+				<li><a href="savjeti.html">SAVJETI</a></li>
+				<li><a href="kontakt.html">KONTAKT</a></li>
+			</ul>
+		</div>
+		
+		<br>
+		<div id="centriranNaslov">
+			<p>Postani član BIHAMK-a</p>
+		</div>
+		
+		<p id="tekstCentriran">
+			Na jednostavan način postanite članom bosanskohercegovačkog auto-moto kluba BIHAMK ! <br>
+			Dovoljno je samo da ispunite formu ispod, a za više informacija pročitajte <a href="http://www.bihamk.ba/index.php?option=com_content&view=article&id=91&Itemid=125" target="_blank">Uslove korištenja</a>. 
+			<!--link na uslove sa originalne stranice BIHAMK-a, zbog toga u validatoru ispisuju kao gresku-->
+		</p>
+		
+		<br>
+		
+		<script>
+		
+			//validacija forme
+			function ValidacijaForme(){
+				//varijable za provjeru ispravnosti
+				var datumRodjenja=document.getElementById("datum").value;
+				var nazivGrada=document.getElementById("grad").value;
+				var nazivAdrese=document.getElementById("adresa").value;
+				var brojTelefona=document.getElementById("telefon").value;
+				var imePrezime=document.getElementById("imeprezime").value;
+				var potvrdaTelefon=document.getElementById("potvrda").value;
+				var emailAdresa=document.getElementById("email").value;
+				var clanskiBroj=document.getElementById("broj").value;
+				var nazivKantona=document.getElementById("kanton").value;
+				
+				var sveIspravno=true;
+				
+				//varijable za ispis greske
+				var imeLabel = document.getElementById("greskaIme");
+				imeLabel.innerHTML="  "; //ciscenje ispisa greske zbog dupliciranja
+				var datumLabel = document.getElementById("greskaDatum");
+				datumLabel.innerHTML="  ";
+				var kantonLabel = document.getElementById("greskaKanton");
+				kantonLabel.innerHTML="  ";
+				var gradLabel = document.getElementById("greskaGrad");
+				gradLabel.innerHTML="  ";
+				var adresaLabel = document.getElementById("greskaAdresa");
+				adresaLabel.innerHTML="  ";
+				var emailLabel = document.getElementById("greskaEmail");
+				emailLabel.innerHTML="  ";
+				var telefonLabel = document.getElementById("greskaTelefon");
+				telefonLabel.innerHTML="  ";
+				var potvrdaLabel = document.getElementById("greskaTelefonP");
+				potvrdaLabel.innerHTML="  ";
+				
+				//provjera ispravnosti imena i prezimena
+				//provjerava se da ime i prezime pocinju velikim slovom, ostala slova su mala, te da duzina rijeci nije manja od 3 slova
+				//VAZNA NAPOMENA: regex ne prepoznaje afrikate (UTF-8)
+				if (imePrezime=="" || !imePrezime.match(/^[A-Z][a-z]{3,40} [A-Z][a-z]{3,40}$/) ) {
+					document.getElementById("imeprezime").style.backgroundImage="url(images/invalid.gif)";
+					document.getElementById("imeprezime").style.backgroundPosition="right top";
+					document.getElementById("imeprezime").style.backgroundRepeat="no-repeat";
+					imeLabel.innerHTML +="Neispravan unos!";
+					if (sveIspravno==true) document.getElementById("imeprezime").focus();
+					sveIspravno=false;
+					
+				}
+				else {
+					document.getElementById("imeprezime").style.backgroundImage="url(images/valid.png)";
+					document.getElementById("imeprezime").style.backgroundPosition="right top";
+					document.getElementById("imeprezime").style.backgroundRepeat="no-repeat";
+				}
+				
+				//provjera ispravnosti datuma (format: DD-MM-YYYY ili DD.MM.YYYY ili DD/MM/YYYY)
+				if (datumRodjenja=="" || !datumRodjenja.match(/^(0?[1-9]|[12][0-9]|3[01])[\/\-\.](0?[1-9]|1[012])[\/\-\.](\d{4})$/)){
+					document.getElementById("datum").style.backgroundImage="url(images/invalid.gif)";
+					document.getElementById("datum").style.backgroundPosition="right top";
+					document.getElementById("datum").style.backgroundRepeat="no-repeat";
+					datumLabel.innerHTML +="Dozvoljeni format: DD-MM-YYYY ili DD.MM.YYYY ili DD/MM/YYYY !";
+					if (sveIspravno==true) document.getElementById("datum").focus();
+					sveIspravno=false;
+				}
+				else {
+					document.getElementById("datum").style.backgroundImage="url(images/valid.png)";
+					document.getElementById("datum").style.backgroundPosition="right top";
+					document.getElementById("datum").style.backgroundRepeat="no-repeat";
+				}
+				
+			//provjera da li uneseni naziv odgovara jednom od deset kantona Federacije BiH
+			if (nazivKantona=="" ||  !(nazivKantona=="Kanton Sarajevo" || nazivKantona=="Unsko-sanski kanton" || nazivKantona=="Posavski kanton" || nazivKantona=="Tuzlanski kanton" || nazivKantona=="Zeničko-dobojski kanton" || nazivKantona=="Bosansko-podrinjski kanton" || nazivKantona=="Srednjobosanski kanton" || nazivKantona=="Hercegovačko-neretvanski kanton" || nazivKantona=="Zapadnohercegovački kanton" || nazivKantona=="Kanton 10")){				
+				document.getElementById("kanton").style.backgroundImage="url(images/invalid.gif)";
+				document.getElementById("kanton").style.backgroundPosition="right top";
+				document.getElementById("kanton").style.backgroundRepeat="no-repeat";
+				kantonLabel.innerHTML +="Ne postoji taj kanton !";
+				sveIspravno=false;
+			}
+			else {
+				document.getElementById("kanton").style.backgroundImage="url(images/valid.png)";
+				document.getElementById("kanton").style.backgroundPosition="right top";
+				document.getElementById("kanton").style.backgroundRepeat="no-repeat";
+			}		
+
+			//provjera ispravno unesenog grada (minimalna duzina 4 i da sadrzi samo mala/velika slova)
+				if (!nazivGrada.match(/^[a-zA-Z]+$/) || nazivGrada=="" || nazivGrada.length<4){
+					document.getElementById("grad").style.backgroundImage="url(images/invalid.gif)";
+					document.getElementById("grad").style.backgroundPosition="right top";
+					document.getElementById("grad").style.backgroundRepeat="no-repeat";
+					gradLabel.innerHTML+="Neispravan unos grada !";
+					if (sveIspravno==true) document.getElementById("grad").focus();
+					sveIspravno=false;
+				}
+				else {
+					document.getElementById("grad").style.backgroundImage="url(images/valid.png)";
+					document.getElementById("grad").style.backgroundPosition="right top";
+					document.getElementById("grad").style.backgroundRepeat="no-repeat";
+				}
+				
+			//provjera ispravno unesene adrese (provjereno na regex101, sto znaci da se moze sastojati iz vise rijeci, a na kraju mora da sadrzi broj)
+				if (!nazivAdrese.match(/\w (\d+)/) || nazivAdrese.length<3 || nazivAdrese=="") {
+					document.getElementById("adresa").style.backgroundImage="url(images/invalid.gif)";
+					document.getElementById("adresa").style.backgroundPosition="right top";
+					document.getElementById("adresa").style.backgroundRepeat="no-repeat";
+					adresaLabel.innerHTML +="Neispravan unos adrese ! Mora sadržavati i broj.";
+					if (sveIspravno==true) document.getElementById("adresa").focus();
+					sveIspravno=false;
+				}
+				else {
+					document.getElementById("adresa").style.backgroundImage="url(images/valid.png)";
+					document.getElementById("adresa").style.backgroundPosition="right top";
+					document.getElementById("adresa").style.backgroundRepeat="no-repeat";
+				}
+				
+			//provjera unesenog kontakt telefona (format: 061-123-456 ili 061123456 ili (061)-123-456 )
+				if (!brojTelefona.match(/^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{3})$/) || brojTelefona=="") {
+					document.getElementById("telefon").style.backgroundImage="url(images/invalid.gif)";
+					document.getElementById("telefon").style.backgroundPosition="right top";
+					document.getElementById("telefon").style.backgroundRepeat="no-repeat";
+					telefonLabel.innerHTML +="Dozvoljeni format: 061-123-456 ili 061123456 ili (061)-123-456 ";
+					if (sveIspravno==true) document.getElementById("telefon").focus();
+					sveIspravno=false;
+				}
+				else {
+					document.getElementById("telefon").style.backgroundImage="url(images/valid.png)";
+					document.getElementById("telefon").style.backgroundPosition="right top";
+					document.getElementById("telefon").style.backgroundRepeat="no-repeat";
+				}
+				
+			//cross validacija (provjera podudaranja brojeva telefona)
+				if (!potvrdaTelefon.match(/^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{3})$/) || potvrdaTelefon!=brojTelefona || potvrdaTelefon=="") {
+					document.getElementById("potvrda").style.backgroundImage="url(images/invalid.gif)";
+					document.getElementById("potvrda").style.backgroundPosition="right top";
+					document.getElementById("potvrda").style.backgroundRepeat="no-repeat";
+					potvrdaLabel.innerHTML +="Broj ne odgovara prethodno unesenom broju !";
+					if (sveIspravno==true) document.getElementById("potvrda").focus();
+					sveIspravno=false;
+				}
+				else {
+					document.getElementById("potvrda").style.backgroundImage="url(images/valid.png)";
+					document.getElementById("potvrda").style.backgroundPosition="right top";
+					document.getElementById("potvrda").style.backgroundRepeat="no-repeat";
+				}
+					
+			//provjera ispravnosti unesene email adrese (mora da sadrzi @ i poslije toga ekstenziju sa najmanje 2 slova)
+				if (!emailAdresa.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) || emailAdresa=="") {
+					document.getElementById("email").style.backgroundImage="url(images/invalid.gif)";
+					document.getElementById("email").style.backgroundPosition="right top";
+					document.getElementById("email").style.backgroundRepeat="no-repeat";
+					emailLabel.innerHTML +="E-mail adresa nije validna!";
+					if (sveIspravno==true) document.getElementById("email").focus();
+					sveIspravno=false;
+				}
+				else {
+					document.getElementById("email").style.backgroundImage="url(images/valid.png)";
+					document.getElementById("email").style.backgroundPosition="right top";
+					document.getElementById("email").style.backgroundRepeat="no-repeat";
+				}
+
+			//provjera ako je unesen clanski broj da bude duzina broja u intervalu [3,5]
+				if (clanskiBroj!=""){
+					if (clanskiBroj.length<3 || clanskiBroj.length>5 ) {
+						document.getElementById("broj").style.backgroundImage="url(images/invalid.gif)";
+						document.getElementById("broj").style.backgroundPosition="right top";
+						document.getElementById("broj").style.backgroundRepeat="no-repeat";
+						if (sveIspravno==true) document.getElementById("broj").focus();
+						sveIspravno=false;
+					}
+					else {
+						document.getElementById("broj").style.backgroundImage="url(images/valid.png)";
+						document.getElementById("broj").style.backgroundPosition="right top";
+						document.getElementById("broj").style.backgroundRepeat="no-repeat";
+					}
+				}
+					
+				return (sveIspravno==true);
+			}
+		</script>
+		<form id="forma" method="GET" onSubmit="return ValidacijaForme()">
+			<table id="formaClan">
+				<tr>
+					<td class="celijaLabel">Ime i prezime</td>
+					<td class="celijaInput"><input type="text" id="imeprezime" name="imeprezime"></td>
+					<td class="celijaError"><div id="greskaIme"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Datum rođenja</td>
+					<td class="celijaInput"><input type="text" id="datum" name="datum"></td>
+					<td class="celijaError"><div id="greskaDatum"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Kanton</td>
+					<td class="celijaInput"><input type="text" id="kanton" name="kanton"></td>
+					<td class="celijaError"><div id="greskaKanton"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Grad / mjesto</td> 
+					<td class="celijaInput"><input type="text" id="grad" name="grad"></td>
+					<td class="celijaError"><div id="greskaGrad"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Adresa</td> 
+					<td class="celijaInput"><input type="text" name="adresa" id="adresa"></td>
+					<td class="celijaError"><div id="greskaAdresa"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Kontakt telefon</td>
+					<td class="celijaInput"><input type="text" id="telefon" name="telefon"></td>
+					<td class="celijaError"><div id="greskaTelefon"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Potvrdi kontakt telefon</td>
+					<td class="celijaInput"><input type="text" name="potvrda" id="potvrda"></td>
+					<td class="celijaError"><div id="greskaTelefonP"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">E-mail</td>
+					<td class="celijaInput"><input type="text" id="email" name="email"></td>
+					<td class="celijaError"><div id="greskaEmail"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Članski broj</td>
+					<td class="celijaInput"><input type="text" id="broj" name="broj"></td>
+					<td class="celijaLabel"></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">&nbsp;</td>
+					<td class="celijaInput"><input type="submit" value="Šalji"></td>
+					<td class="celijaLabel"></td>
+			</table>
+		</form>
+		
+	</div>
+	
+	 <div id="footer">
+		<p> Copyright © 2015 BIHAMK Sarajevo | Design by Edin Čongo | Sva prava zadržana. </p>
+	</div>
+</body>
+</html>
