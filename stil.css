@@ -5,7 +5,7 @@
 #header {
 	width:100%;
 	height: 300px;
-	background: #4f4f4f url(images/logo.png) no-repeat center -1px fixed; 
+	background: #4f4f4f url(images/logo.png) no-repeat center -1px; 
 	position: relative;
 }
 
@@ -34,7 +34,7 @@
 }
 
 ul#meni {
-	list-style: none outside none; /* za uklanjanje simbola u listi */
+	list-style: none outside none; /*za uklanjanje simbola u listi */
 	overflow: hidden;
 	padding: 0;
 	clear: both;
@@ -100,7 +100,7 @@ a:hover {
 #logoClanstvo {
 	border: 0pt none;
 	margin: 1px 6px;
-	padding-left: 50px;  
+	padding-left: 50px; 
 }
 
 .listaLinkovi {
@@ -262,6 +262,34 @@ div#greskaIme{
 	height: auto;
 	margin-left: 300px;
 	padding: 0;
+}
+
+a.prviNivo{
+	text-decoration: none;
+}
+
+p.prviNivo{
+	display: none;
+}
+
+a.drugiNivo{
+	margin-left:30px;
+	text-decoration: none;
+}
+
+p.drugiNivo{
+	display: none;
+	margin-left:35px;
+}
+
+a.treciNivo{
+	margin-left:50px;
+		text-decoration: none;
+
+}
+p.treciNivo{
+	display: none;
+	margin-left:90px;
 }
 
 #vaznoIstaknuti{

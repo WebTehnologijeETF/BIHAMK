@@ -34,7 +34,106 @@
 		</p>
 		<br>
 		
+		<script>
+			function prviNivo(nivo, link, naziv) {
+				var id = "tema"+nivo
+				var tema = naziv
+				if (document.getElementById(id).style.display === 'none') {
+					document.getElementById(id).style.display = 'block'
+					link.innerHTML = "<img src=\"images/arrow2.png\"/>"  + naziv
+				} else {
+					document.getElementById(id).style.display = 'none'
+					link.innerHTML = "<img src=\"images/arrow.png\"/>" + naziv
+				}
+				return false
+			}
+			
+			function drugiNivo(nivo, link, naziv) {
+				var id = "tema"+nivo
+				var tema = naziv
+				if (document.getElementById(id).style.display === 'none') {
+					document.getElementById(id).style.display = 'block'
+					link.innerHTML = "<img src=\"images/plus2.png\"/>"  + naziv
+				} else {
+					document.getElementById(id).style.display = 'none'
+					link.innerHTML = "<img src=\"images/plus.gif\"/>" + naziv
+				}
+				return false
+			}
+			
+			function treciNivo(nivo, link, naziv) {
+				var id = "tema"+nivo
+				var tema = naziv
+				if (document.getElementById(id).style.display === 'none') {
+					document.getElementById(id).style.display = 'block'
+					link.innerHTML = "<img src=\"images/bullet2.png\"/>"  + naziv
+				} else {
+					document.getElementById(id).style.display = 'none'
+					link.innerHTML = "<img src=\"images/bullet.png\"/>" + naziv
+				}
+				return false
+			}
+
+		</script>
 		
+		<p><a href="" onclick="return prviNivo(1,this, 'Pripremite vozilo za zimu')" class="prviNivo"><img src="images/arrow.png" alt="strelica"/>Pripremite vozilo za zimu</a></p>
+		<p class="prviNivo" id="tema1">
+			U zimskom periodu, niske temperature i česte i obilne padavine izuzetno nepovoljno utiču na motorna vozila, posebno kad su intenzivnije u upotrebi.<br><br>
+			Zbog snijega ili poledice sistemi teže prenose snagu na podlogu, so nakupljena na cestama šteti podvozju i karoseriji, a niske temperature onemogućavaju normalan rad motora, 
+			crpe energiju iz akumulatora, a štete i svim ostalim komponentama vozila. <br><br>
+			Stoga je neophodno adekvatno pripremiti i sebe i svoje vozilo za nadolazeću zimu.<br><br>
+			
+			<a href=""  onclick="return drugiNivo(2,this, 'Gume')" class="drugiNivo"><img src="images/plus.gif" alt="plus"/>Gume</a><br>
+			<p class="drugiNivo" id="tema2">
+				<img src="images/zimske-gume.jpg" alt="ZimskeGume"/><br>
+				Kontakt između ceste i vozila ostvaruje se preko guma, odnosno na jednom relativno malom dijelu dodirne površine između gume i ceste. Upravo ta kontaktna površina od presudne 
+				je važnosti za sigurnost upravljanja vozilom.
+			</p>	
+		</p>
+		
+		<p><a href="" onclick="return prviNivo(3,this, 'Tehnike')" class="prviNivo"><img src="images/arrow.png" alt="strelica"/>Tehnike</a></p>
+		<p class="prviNivo" id="tema3"><a href="" onclick="return drugiNivo(4,this, 'Tehnika vožnje')" class="drugiNivo"><img src="images/plus.gif" alt="plus"/>Tehnika vožnje</a></p>
+		<p class="drugiNivo" id="tema4">
+			<a href=""  onclick="return treciNivo(6,this, 'Tehnika vožnje u kružnom toku saobraćaja')" class="treciNivo"><img src="images/bullet.png" alt="bullet"/>Tehnika vožnje u kružnom toku saobraćaja</a><br>
+			<a href=""  onclick="return treciNivo(5,this, 'Tehnika vožnje unazad')" class="treciNivo"><img src="images/bullet.png" alt="bullet"/>Tehnika vožnje unazad</a><br>
+			<p class="treciNivo" id="tema5">
+				Vozač se smije kretati vozilom unatrag na kratkom dijelu ceste uz uvjet da kretanjem ne ometa ostale sudionike u prometu. Unatrag se krećete sa uključena sva četiri pokazivača 
+				smjera i to onom stranom kolnika kojom ste se do tada kretali unaprijed, što bliže desnom rubu kolnika. Dužni ste propustiti vozila koja dolaze iza vas. Kretanje vozilom unatrag je 
+				zabranjeno na autocesti, na brzoj cesti, cesti namijenjenoj isključivo za promet motornih vozila i u tunelu. <br><br>
+				<img src="http://www.bihamk.ba/images/stories/bihamk/preventiva/unazad.jpg" alt="voznjaUnazad"/>
+				<br>
+			</p>
+			
+			<p class="treciNivo" id="tema6">
+				U kružnom toku, izuzetno, saobraćaj može biti regulisan bez saobraćajnog znaka “nailazak na cestu sa prvenstvom prolaza”, npr. sa svjetlosnom signalizacijom (semaforima) ili drugim 
+				saobraćajnim znakovima, te se u tim slučajevima primjenjuju opšta pravila prvenstva prolaza, a u skladu sa postavljenom signalizacijom. <br><br>
+				<img src="http://www.bihamk.ba/images/stories/bihamk/preventiva/kruznitok02.jpg"  alt="kruzniTok1"/> <img src="http://www.bihamk.ba/images/stories/bihamk/preventiva/kruznitok03.jpg" alt="kruzniTok2"/><br>
+				Kod kružnih tokova sa više saobraćajnih traka i ovisno od odredišta u koje želite stići potrebno je da izaberete pravilnu putanju kretanja. Ako postoje horizontalna i vertikalna signalizacija 
+				u kružnom toku nephodno je istu slijediti i uvažavati. Brzinu kretanja vozila prilagoditi građevinsko-tehničkim elementima raskršća i saobraćaja  drugih vozila. Izbjegavati nepotrebna 
+				ubrzavanja i preticanja. Kod promjene saobraćajne trake potrebno je pravovremeno dati pokazivač pravca. Ako je drugi vozač u fazi prestrojavanja, prilagodite brzinu i olakšajte mu 
+				promjenu saobraćajne trake.
+			</p>	
+		</p>
+			
+		<p><a href="" onclick="return prviNivo(7,this, 'Pripremite vozilo za duža putovanja')" class="prviNivo"><img src="images/arrow.png" alt="strelica"/>Pripremite vozilo za duža putovanja</a></p>
+		<p class="prviNivo" id="tema7">
+			Kako je priprema prije putovanja nužna za nas ljude, tako je zbog naše sigurnosti potrebna i za naše vozilo. Posebno treba obratiti pažnju na uređaje za upravljanje, kočnice i stanje pneumatika.<br><br>
+			Idealno je vrijeme da posjetite vašeg servisera i napravite detaljnu provjeru ispravnosti uređaja na vašem vozilu:<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/>  Provjerite stanje vašeg akumulatora<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/>  Kontrolišite pneumatike, obratite pažnju na pritisak i opterećenja<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/>  Prekontrolišite nivo tečnosti sistema za hlađenje<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/>  Provjerite nivo i kvalitet ulja u motoru<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/>  Provjerite nivo kočionog UK ulja i prekontrolište stanje svjetlosno-signalnih uređaja<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/>  Kontrolišite stanje kočionog sistema<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/>  Provjerite stanje upravljačkog mehanizma<br>
+				<img src="http://www.innovate-research.com/images/bullet_icon1.png" alt="bullet"/> Provjerite stanje obavezne opreme u vozilu (rezervni točak, dizalica, komplet prve pomoći, komplet rezervnih sijalica, uže, trokut, reflektirajući prsluk,...)
+			
+		</p>
+		<p><a href="" onclick="return prviNivo(8,this, 'Postavljanje lanaca za snijeg')" class="prviNivo"><img src="images/arrow.png" alt="strelica"/>Postavljanje lanaca za snijeg</a></p>
+		<p class="prviNivo" id="tema8">
+			U našoj brošuri dajemo upute kako postaviti lance za snijeg<br><br>
+			<a href="http://bihamk.ba/dokumenti/ostalo/POSTAVLJANJE%20LANACA%20ZA%20SNIJEG.pdf" target="_blank"> Brošura </a>
+		</p>
 	</div>
 	
 	<div id="footer">
