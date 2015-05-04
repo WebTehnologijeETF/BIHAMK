@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="stil.css">
+	<link rel="shortcut icon" type="image/x-icon" href="bihamk_icon.png">
+    <title>BIHAMK</title>	
+</head>
+
+<body>  
+	<div class="sadrzaj">
+		<div id="centriranNaslov">
+			<p>Postani član BIHAMK-a</p>
+		</div>
+		
+		<p id="tekstCentriran">
+			Na jednostavan način postanite članom bosanskohercegovačkog auto-moto kluba BIHAMK ! <br>
+			Dovoljno je samo da ispunite formu ispod, a za više informacija pročitajte <a href="http://www.bihamk.ba/index.php?option=com_content&view=article&id=91&Itemid=125" target="_blank">Uslove korištenja</a>. 
+			<!--link na uslove sa originalne stranice BIHAMK-a, zbog toga u validatoru ispisuju kao gresku-->
+		</p>
+		
+		<br>
+		
+		<form id="forma" method="GET" onSubmit="ValidacijaForme();">
+			<table id="formaClan">
+				<tr>
+					<td class="celijaLabel">Ime i prezime</td>
+					<td class="celijaInput"><input type="text" id="imeprezime" name="imeprezime"></td>
+					<td class="celijaError"><div id="greskaIme"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Datum rođenja</td>
+					<td class="celijaInput"><input type="text" id="datum" name="datum"></td>
+					<td class="celijaError"><div id="greskaDatum"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Kanton</td>
+					<td class="celijaInput"><input type="text" id="kanton" name="kanton"></td>
+					<td class="celijaError"><div id="greskaKanton"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Grad / mjesto</td> 
+					<td class="celijaInput"><input type="text" id="grad" name="grad"></td>
+					<td class="celijaError"><div id="greskaGrad"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Poštanski broj</td> 
+					<td class="celijaInput"><input type="text" id="postanskiBroj" name="postanskiBroj"></td>
+					<td class="celijaError"><div id="greskaPostanskiBroj"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Adresa</td> 
+					<td class="celijaInput"><input type="text" name="adresa" id="adresa"></td>
+					<td class="celijaError"><div id="greskaAdresa"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Kontakt telefon</td>
+					<td class="celijaInput"><input type="text" id="telefon" name="telefon"></td>
+					<td class="celijaError"><div id="greskaTelefon"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Potvrdi kontakt telefon</td>
+					<td class="celijaInput"><input type="text" name="potvrda" id="potvrda"></td>
+					<td class="celijaError"><div id="greskaTelefonP"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">E-mail</td>
+					<td class="celijaInput"><input type="text" id="email" name="email"></td>
+					<td class="celijaError"><div id="greskaEmail"></div></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">Članski broj</td>
+					<td class="celijaInput"><input type="text" id="broj" name="broj"></td>
+					<td class="celijaLabel"></td>
+				</tr>
+				<tr>
+					<td class="celijaLabel">&nbsp;</td>
+					<td class="celijaInput"><input type="button" value="Šalji" onclick="ValidacijaForme();"></td>
+					<td class="celijaLabel"></td>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

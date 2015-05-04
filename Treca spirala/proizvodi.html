@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="stil.css">
+	<link rel="shortcut icon" type="image/x-icon" href="bihamk_icon.png">
+    <title>BIHAMK</title>	
+</head>
+
+<body>
+<div class="sadrzaj">
+	<div id="centriranNaslov">
+		<p>Naši Proizvodi</p>
+	</div>
+	
+	<p>
+		BIHAMK vam nudi svoje originalne proizvode paketa usluge, kako unutar države, tako i u vidu internacionalne pomoći na cesti.
+		Ukoliko želite poručiti neki naš paket usluge, kontaktirajte nas i vrlo rado ćemo ugovoriti cijenu za paket usluga u odnosu na dužnu trajanja ugovora
+		te pojedinosti koje se tiču tipa vozila.
+	</p>
+	
+	<div id="sviProizvodi">
+
+	</div>
+	
+	<div id="dodajProizvod">
+		<p>Dodaj novi proizvod</p>
+		<div>
+			<p>Naziv:</p>
+			<input type="text" id="proizvodNaslov" name="proizvodNaslov">
+			<p>Opis: </p>
+			<textarea id="proizvodOpis" rows="4" cols="50"></textarea>
+			<br/>
+			<input type="submit" id="proizvodPosalji" name="proizvodPosalji" value="Dodaj" onclick='posaljiProizvod("dodavanje", null)';></div>
+	</div>
+
+</div>
+<script src="proizvodi.js"></script>
+</div>
+</html>

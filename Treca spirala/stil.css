@@ -1,0 +1,362 @@
+@import url('http://fonts.googleapis.com/css?family=Anton');
+@import url('http://fonts.googleapis.com/css?family=Oswald');
+@import url('http://fonts.googleapis.com/css?family=Cabin');
+
+#header {
+	width:100%;
+	height: 300px;
+	background: #4f4f4f url(images/logo.png) no-repeat center -1px; 
+	position: relative;
+}
+
+#naslov {
+	font-family: 'Anton', sans-serif;
+	text-align: center;
+	font-size: 30px;
+	padding: 200px 0;
+}
+
+#footer {
+	background: #4f4f4f;
+	text-align: center;
+	font-family: 'Cabin', sans-serif;
+	color: #e3d809;
+	width:100%;
+	height:60px;
+	position:static;
+	line-height: normal;
+}
+
+.navigacija{
+	width: 960px;
+	margin: 0 auto; 
+	overflow: hidden; 
+}
+
+ul#meni {
+	list-style: none outside none; /*za uklanjanje simbola u listi */
+	overflow: hidden;
+	padding: 0;
+	clear: both;
+    margin: 20px auto 0;
+	margin-left: 150px;
+    width: 960px;
+	font-family: 'Oswald', sans-serif;
+}
+
+ul#meni li {
+	float: left; 
+	margin: 0 10px 0 0;
+	padding: 0 10px 0 0;
+	border-right: 1px solid #ddd;
+}
+
+ul#meni li:last-child {
+	border-right: 0 ;
+}
+
+ul#meni li a {
+	font-size: 20px;
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+ul#meni li a:hover {
+	color: #e3d809;
+}
+
+.sadrzaj {
+	font-family: 'Cabin', sans-serif;
+	position: relative;
+	width: 960px;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+	text-align: justify;
+}	
+
+a {
+	color: #4f4f4f;
+}
+
+a:hover {
+	color: #e3d809;
+	font-weight: bold;
+}
+
+#naslovPosta {
+	font-family: 'Cabin', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#centriranNaslov {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#logoClanstvo {
+	border: 0pt none;
+	margin: 1px 6px;
+	padding-left: 50px; 
+}
+
+.listaLinkovi {
+	list-style-image: url(images/auto-icon.png);
+	margin-left: 10px;
+}
+
+.dugmeClanstvo {
+	color: #000;
+	border: 2px solid;
+	padding: 5px;
+	
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#tekstCentriran{
+	text-align: center;
+}
+
+table#tabelaKontakti {
+	margin-left: 130px;
+}
+
+tr#prviRed{
+	background: #dedede;
+	height: 30px;
+	text-align: left;
+	border-top: 0px;
+	border-bottom: 1px solid #000;
+}
+
+th#prveCelije {
+	height: 30px;
+}
+
+td.celijaDirekcija {
+	border: 0px ;
+	border-left: 0px none;
+	border-bottom: 1px  solid #dedede;
+	width: 350px;
+	height: 25px;
+	text-align: left;
+}
+
+td.celijaTelefon{
+	border: 0px ;
+	border-left: 0px none;
+	border-bottom: 1px solid #dedede;
+	width: 200px;
+	height: 25px;
+	text-align: left;
+}
+
+a#kontakt{
+	text-decoration: none;
+}
+
+#infoAdresa {
+	margin-left: 300px;
+}
+
+table#formaClan{
+	margin-left: 250px;
+}
+
+td.celijaLabel{
+	border: 0px ;
+	border-left: 0px none;
+	border-bottom: 0px;
+	width: 250px;
+	height: 25px;
+	text-align: right;
+}
+
+td.celijaInput{
+	border: 0px ;
+	border-left: 0px none;
+	border-bottom: 0px;
+	width: auto;
+	height: 25px;
+}
+
+td.celijaError{
+	border: 0px ;
+	border-left: 0px none;
+	border-bottom: 0px;
+	width: 700px;
+	height: 25px;
+	text-align: right;
+}
+
+input{
+	height:20px;
+}
+
+#neispravno{
+	background-image: url(images/invalid.gif);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+#ispravno{
+	background-image: url(images/valid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+div#greskaIme{
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaDatum{
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaKanton {
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaGrad {
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaPostanskiBroj {
+  color: #c65959;
+  text-align: left;
+}
+
+#greskaAdresa {
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaEmail {
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaTelefon {
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaTelefonP {
+	color: #c65959;
+	text-align:left;
+}
+
+#greskaBroj {
+	color: #c65959;
+	text-align:left;
+}
+
+.kontaktForma {
+	position: relative;
+	width: 600px;
+	height: auto;
+	margin-left: 300px;
+	padding: 0;
+}
+
+a.prviNivo{
+	text-decoration: none;
+}
+
+p.prviNivo{
+	display: none;
+}
+
+a.drugiNivo{
+	margin-left:30px;
+	text-decoration: none;
+}
+
+p.drugiNivo{
+	display: none;
+	margin-left:35px;
+}
+
+a.treciNivo{
+	margin-left:50px;
+		text-decoration: none;
+
+}
+p.treciNivo{
+	display: none;
+	margin-left:90px;
+}
+
+#vaznoIstaknuti{
+	font-weight: bold;
+	color: #840c0c;
+}
+
+#naslovObavijesti {
+	font-family: 'Cabin', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color:  #283cbe;
+}
+
+#datumAutor {
+	font-family: 'Cabin', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	color:  #7d7d7d;
+}
+
+.dugmeDetalji {
+	color: #000;
+	border: 2px solid;
+	padding: 4px;
+	
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#sadrzaj_tab {
+	border: 0px;
+	width: 1000px;
+}
+
+.naslovProizvoda {
+	font-family: 'Cabin', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color:  #283cbe;
+	margin-bottom: 15px;
+}
+
+.opisProizvoda {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.adminDugmad {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.proizvodSadrzaj {
+	border: solid 1px;
+	padding: 5px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.editGrupa {
+	display: none;
+}
