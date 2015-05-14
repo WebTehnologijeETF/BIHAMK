@@ -17,7 +17,7 @@ var navigacija = function(tab){
 		}
 	};
 	
-	ajax.open("GET", "http://localhost/"+tab, true);
+	ajax.open("GET", "/"+tab, true);
 	ajax.send();
 };
 
